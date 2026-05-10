@@ -6,6 +6,11 @@ SCRIPT PURPOSE:
 	This script creates tables in the 'bronze' schema, dropping existing tables 
 	if they already exists.
 	Run this script to re-define the DDL structure of 'bronze' Tables
+STORED PROCEDURE: LOAD BRONZE LAYER WITH NO PARAMETERS (SOURCE -> BRONZE) 
+>> It truncate the existing tables and then insert data into them.
+>> Uses bulk insert command to load data in one go from sources (crm & erp files)
+USAGE EXAMPLE:
+	EXEC Bronze.load_bronze;
 ===============================================================================
 */
 --Create All Tables from sources (crm & erp)
